@@ -164,3 +164,4 @@ cython_debug/
 /admin.txt
 /metanit/media/
 /qodana.yaml
+/metanit/staticfiles/
