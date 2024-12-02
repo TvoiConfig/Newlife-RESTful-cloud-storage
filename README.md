@@ -27,7 +27,7 @@ Newlife-Without-SimpleJWT is a RESTful cloud storage API that allows users to up
 ## Project structure
 - **database** - contain models and register them in admin-panel
 - **files** - contain FileUpload and FileEmploy(Edit, Delete, Download) functions of API
-- **metanit** - contain django configuration
+- **newlife** - contain django configuration
 - **set_files_access** - contain files accesses(Add permission, Delete permission, View user files, View shared files) functions of API
 - **users** - contain authorization, registration and logout users functions of API
 
@@ -50,12 +50,12 @@ Newlife-Without-SimpleJWT is a RESTful cloud storage API that allows users to up
    
 3. **Edit database settings**
     ```
-    go to metanit/metanit/settings.py
+    go to newlife/newlufe/settings.py
     edit DATABASES parameter (set db server or use SQLite)
     ```
-4. **Open metanit**
+4. **Open newlife**
     ```bash
-    cd ./metanit/
+    cd ./newlife/
 
 5. **Makemigrations**
 
@@ -92,7 +92,7 @@ Below are the available API endpoints for testing the functionality of the **New
 ---
 ### Users
 #### **Authentication**
-- **Endpoint:** `POST /authorization`
+- **Endpoint:** `POST /authorization/`
 - **Description:** Login user into account.
 - **Headers**
     ```headers
@@ -105,7 +105,7 @@ Below are the available API endpoints for testing the functionality of the **New
   }
   
 #### **Register a New User**
-- **Endpoint:** `POST /registration`
+- **Endpoint:** `POST /registration/`
 - **Description:** Creates a new user account.
 - **Headers**
     ```headers
@@ -120,7 +120,7 @@ Below are the available API endpoints for testing the functionality of the **New
   }
 
 #### **Logout**
-- **Endpoint:** `GET /logout`
+- **Endpoint:** `GET /logout/`
 - **Description:** Logout user from account.
 - **Headers**
     ```headers
@@ -128,7 +128,7 @@ Below are the available API endpoints for testing the functionality of the **New
 
 ### Files
 #### **Post files**
-- **Endpoint:** `POST /files`
+- **Endpoint:** `POST /files/`
 - **Headers**
     ```headers
     Content-Type: multipart/form-data
@@ -151,7 +151,7 @@ Below are the available API endpoints for testing the functionality of the **New
   }
 
 #### **Delete file**
-- **Endpoint:** `DELETE /files/<your file id here>`
+- **Endpoint:** `DELETE /files/<your file id here>/`
 - **Description:** Delete file.
 - **Headers**
     ```headers
@@ -159,14 +159,14 @@ Below are the available API endpoints for testing the functionality of the **New
     Authorization: token <past your token here>
 
 #### **Download file**
-- **Endpoint:** `GET /files/<your file id here>`
+- **Endpoint:** `GET /files/<your file id here>/`
 - **Description:** Download file.
 - **Headers**
     ```headers
     Authorization: token <past your token here>
 
 #### **Add file accesses**
-- **Endpoint:** `POST /files/<your file id here>/accesses`
+- **Endpoint:** `POST /files/<your file id here>/accesses/`
 - **Description:** Add access to file.
 - **Headers**
     ```headers
@@ -179,7 +179,7 @@ Below are the available API endpoints for testing the functionality of the **New
   }
 
 #### **Delete file accesses**
-- **Endpoint:** `DELETE /files/<your file id here>/accesses`
+- **Endpoint:** `DELETE /files/<your file id here>/accesses/`
 - **Description:** Delete access to file.
 - **Headers**
     ```headers
@@ -192,7 +192,7 @@ Below are the available API endpoints for testing the functionality of the **New
   }
 
 #### **View user files**
-- **Endpoint:** `GET /files/disk`
+- **Endpoint:** `GET /files/disk/`
 - **Description:** Return user files.
 - **Headers**
     ```headers
@@ -200,7 +200,7 @@ Below are the available API endpoints for testing the functionality of the **New
     Authorization: token <past your token here>
 
 #### **View shared files**
-- **Endpoint:** `GET  /shared`
+- **Endpoint:** `GET  /shared/`
 - **Description:** Return shared files for user.
 - **Headers**
     ```headers
